@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    
+    <head>
+        
+        <link rel="stylesheet" href="estilo.css">
+    
+    </head>
+    
+    <body>
+        <script language=javascript type="text/javascript">
+    
+        now = new Date
+
+        var dia = now.getDate();
+        var mes = now.getMonth() + 1;
+        var ano = now.getFullYear();
+        var hora = now.getHours();         
+        var min = now.getMinutes();        
+        var seg = now.getSeconds();        
+
+        document.write ("<h3>" + dia + "/" + mes + "/" + ano + " " + hora + ":" + min + ":" + seg  + " America/Sao_Paulo" + '</h3>')
+
+        </script>
+
+        <form id="form">
+            <main>
+                <label for="id">Id: </label>
+                <input type="text" name="id" id="id">
+                
+                <label for="nome">Nome:  </label>
+                <input type="text" name="nome" id="nome">     
+                
+                <label for="nascimento">Data de nascimento:  </label>
+                <input type="date" name="nascimento" id="nascimento"> 
+                
+                <label for="salario">Salário:  </label>
+                <input type="text" name="salario" id="salario"> 
+
+                <input type="submit" id= "botao" value="Enviar formulário">
+
+            </main>
+
+            <input type="submit" id= "consultar" value="Consultar">
+
+        </form>
+        
+        <script>
+            
+            var id = document.querySelector("#id");
+            var nome = document.querySelector("#nome");
+            var nascimento = document.querySelector("#nascimento");
+            var salario = document.querySelector("#salario");
+            
+            var botao = document.querySelector("#botao");   
+            botao.addEventListener("click", function(event){
+                event.preventDefault();
+                var idInput = id.value;
+                var nomeInput = nome.value;
+                var nascimentoInput = nascimento.value;
+                var salarioInput = salario.value;
+                var cliente = ("id: " + idInput + " nome: " + nomeInput + " nascimento: " + nascimentoInput + " salario: " + salarioInput);
+                console.log(cliente)
+            })
+
+            var consultar = document.querySelector("#consultar");       
+            consultar.addEventListener("click", function (event) {
+                event.preventDefault();
+                var idInput = id.value;
+                var nomeInput = nome.value;
+                var nascimentoInput = nascimento.value;
+                var salarioInput = salario.value;
+                var cliente = ("id: " + idInput + " nome: " + nomeInput + " nascimento: " + nascimentoInput + " salario: " + salarioInput);
+                document.write(cliente);
+            })
+            
+        
+        </script>
+
+    </body>
+
+</html> 
